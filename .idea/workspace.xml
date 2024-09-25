@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +45,7 @@
   "keyToString": {
     "Application.ProjectManagementSystemApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "chat__service",
+    "git-widget-placeholder": "project__service",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Fullstack/projectmanagementsystem",
     "settings.editor.selected.configurable": "vcs.Git"
