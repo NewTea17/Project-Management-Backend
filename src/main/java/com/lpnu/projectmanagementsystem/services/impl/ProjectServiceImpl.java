@@ -11,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -46,22 +48,44 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public List<ProjectEntity> getProjectByTeam(UserEntity user, String category, String tag) throws Exception {
-        return List.of();
+        List<ProjectEntity> projects = projectRepository.findByTeamContainingOrOwner(user, user);
+
+        if (category != null) {
+            projects = projects.stream().filter(project -> project.getCategory().equals(category)).toList();
+        }
+
+        if (tag != null) {
+            projects = projects.stream().filter(project -> project.getTags().contains(tag)).toList();
+        }
+
+        return projects;
     }
 
     @Override
     public ProjectEntity getProjectById(Long id) throws Exception {
-        return null;
+        Optional<ProjectEntity> optionalProject = projectRepository.findById(id);
+        if (optionalProject.isEmpty()) {
+            throw new Exception("Project not found");
+        }
+
+        return optionalProject.get();
     }
 
     @Override
     public void deleteProject(Long id, Long userId) throws Exception {
-
+        getProjectById(id);
+        // userService.findUserById(userId);
+        projectRepository.deleteById(id);
     }
 
     @Override
     public ProjectEntity updateProject(ProjectEntity updatedProject, Long id) throws Exception {
-        return null;
+        ProjectEntity project = getProjectById(id);
+        project.setName(updatedProject.getName());
+        project.setDescription(updatedProject.getDescription());
+        project.setTags(updatedProject.getTags());
+
+        return projectRepository.save(project);
     }
 
     @Override
