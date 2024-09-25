@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="" />
+    <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +22,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -40,7 +43,7 @@
   "keyToString": {
     "Application.ProjectManagementSystemApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "09eeb555",
+    "git-widget-placeholder": "project__service",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Fullstack/projectmanagementsystem",
     "settings.editor.selected.configurable": "vcs.Git"
