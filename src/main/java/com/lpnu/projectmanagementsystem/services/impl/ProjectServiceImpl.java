@@ -5,6 +5,7 @@ import com.lpnu.projectmanagementsystem.entities.ProjectEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
 import com.lpnu.projectmanagementsystem.repositories.ProjectRepository;
 import com.lpnu.projectmanagementsystem.services.ProjectService;
+import com.lpnu.projectmanagementsystem.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +16,23 @@ public class ProjectServiceImpl implements ProjectService {
     @Autowired
     private ProjectRepository projectRepository;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     public ProjectEntity createProject(ProjectEntity project, UserEntity user) throws Exception {
-        return null;
+        ProjectEntity createdProject = new ProjectEntity();
+        createdProject.setOwner(user);
+        createdProject.setTags(project.getTags());
+        createdProject.setName(project.getName());
+        createdProject.setCategory(project.getCategory());
+        createdProject.setDescription(project.getDescription());
+        createdProject.getTeam().add(user);
+
+        ProjectEntity savedProject = projectRepository.save(createdProject);
+
+        ChatEntity chat = new ChatEntity();
+        chat.setProject(savedProject);
     }
 
     @Override
