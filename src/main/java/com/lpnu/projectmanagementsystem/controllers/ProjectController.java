@@ -1,9 +1,12 @@
 package com.lpnu.projectmanagementsystem.controllers;
 
 import com.lpnu.projectmanagementsystem.entities.ChatEntity;
+import com.lpnu.projectmanagementsystem.entities.InvitationEntity;
 import com.lpnu.projectmanagementsystem.entities.ProjectEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
+import com.lpnu.projectmanagementsystem.requests.InvitationRequest;
 import com.lpnu.projectmanagementsystem.responses.MessageResponse;
+import com.lpnu.projectmanagementsystem.services.InvitationService;
 import com.lpnu.projectmanagementsystem.services.ProjectService;
 import com.lpnu.projectmanagementsystem.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +24,9 @@ public class ProjectController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private InvitationService invitationService;
 
     @GetMapping
     public ResponseEntity<List<ProjectEntity>> getProjects(
@@ -84,5 +90,24 @@ public class ProjectController {
     ) throws Exception {
         ChatEntity chat = projectService.getChatByProjectId(id);
         return new ResponseEntity<>(chat, HttpStatus.OK);
+    }
+
+    @PostMapping("invite")
+    public ResponseEntity<MessageResponse> inviteToProject(@RequestBody InvitationRequest request) throws Exception {
+        invitationService.sendInvitation(request.getEmail(), request.getProjectId());
+        return new ResponseEntity<>(new MessageResponse("User invited to project successfully"), HttpStatus.OK);
+    }
+
+    @GetMapping("accept_invitation")
+    public ResponseEntity<InvitationEntity> acceptInviteToProject(
+            @RequestParam(required = false) String token,
+            @RequestHeader("Authorization") String jwt
+    ) throws Exception {
+        UserEntity user = userService.findUserProfileByJwt(jwt);
+        InvitationEntity invitation = invitationService.acceptInvitation(token, user.getId());
+
+        projectService.addUserToProject(invitation.getProjectId(), user.getId());
+
+        return new ResponseEntity<>(invitation, HttpStatus.ACCEPTED);
     }
 }
