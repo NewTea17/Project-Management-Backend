@@ -89,17 +89,39 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public void addUserToProject(Long projectId, Long userId) throws Exception {
+    public List<ProjectEntity> searchProjects(String keyword, UserEntity user) throws Exception {
+        return projectRepository.findByNameContainingAndTeamContains(keyword, user);
+    }
 
+    @Override
+    public void addUserToProject(Long projectId, Long userId) throws Exception {
+        ProjectEntity project = getProjectById(projectId);
+        UserEntity user = userService.findUserById(userId);
+
+        if (!project.getTeam().contains(user)) {
+            project.getChat().getUsers().add(user);
+            project.getTeam().add(user);
+        }
+
+        projectRepository.save(project);
     }
 
     @Override
     public void deleteUserFromProject(Long projectId, Long userId) throws Exception {
+        ProjectEntity project = getProjectById(projectId);
+        UserEntity user = userService.findUserById(userId);
 
+        if (project.getTeam().contains(user)) {
+            project.getChat().getUsers().remove(user);
+            project.getTeam().remove(user);
+        }
+
+        projectRepository.save(project);
     }
 
     @Override
     public ChatEntity getChatByProjectId(Long projectId) throws Exception {
-        return null;
+        ProjectEntity project = getProjectById(projectId);
+        return project.getChat();
     }
 }
