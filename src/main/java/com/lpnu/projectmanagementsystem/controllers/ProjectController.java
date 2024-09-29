@@ -1,5 +1,6 @@
 package com.lpnu.projectmanagementsystem.controllers;
 
+import com.lpnu.projectmanagementsystem.entities.ChatEntity;
 import com.lpnu.projectmanagementsystem.entities.ProjectEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
 import com.lpnu.projectmanagementsystem.responses.MessageResponse;
@@ -65,5 +66,23 @@ public class ProjectController {
         UserEntity user = userService.findUserProfileByJwt(jwt);
         projectService.deleteProject(id, user.getId());
         return new ResponseEntity<>(new MessageResponse("Project successfully deleted"), HttpStatus.OK);
+    }
+
+    @GetMapping("search")
+    public ResponseEntity<List<ProjectEntity>> searchProject(
+            @RequestParam(required = false) String keyword,
+            @RequestHeader("Authorization") String jwt
+    ) throws Exception {
+        UserEntity user = userService.findUserProfileByJwt(jwt);
+        List<ProjectEntity> projects = projectService.searchProjects(keyword, user);
+        return new ResponseEntity<>(projects, HttpStatus.OK);
+    }
+
+    @GetMapping("{id}/chat")
+    public ResponseEntity<ChatEntity> getChatByProjectId(
+            @RequestParam(required = false) Long id
+    ) throws Exception {
+        ChatEntity chat = projectService.getChatByProjectId(id);
+        return new ResponseEntity<>(chat, HttpStatus.OK);
     }
 }
