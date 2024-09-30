@@ -30,4 +30,12 @@ public class TaskController {
     public ResponseEntity<List<TaskEntity>> getTaskByProjectId(@PathVariable Long id) throws Exception {
         return new ResponseEntity<>(taskService.getTasksByProjectId(id), HttpStatus.OK);
     }
+
+    @PostMapping
+    public ResponseEntity<TaskEntity> createTask(@RequestBody TaskRequest request, @RequestHeader("Authorization") String jwt)
+            throws Exception {
+        UserEntity user = userService.findUserProfileByJwt(jwt);
+        TaskEntity createdTask = taskService.createTask(request, user);
+        return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
+    }
 }
