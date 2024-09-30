@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/repositories/InvitationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/requests/InvitationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/InvitationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/EmailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/TaskController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/repositories/TaskRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/requests/TaskRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/TaskService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/TaskServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +50,7 @@
   "keyToString": {
     "Application.ProjectManagementSystemApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "invitation__service",
+    "git-widget-placeholder": "task__service",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/Fullstack/projectmanagementsystem",
     "settings.editor.selected.configurable": "vcs.Git"
@@ -62,6 +58,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.lpnu.projectmanagementsystem.repositories" />
       <recent name="com.lpnu.projectmanagementsystem.entities" />
     </key>
   </component>
