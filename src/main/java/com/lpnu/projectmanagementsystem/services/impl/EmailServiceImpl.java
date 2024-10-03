@@ -1,6 +1,7 @@
 package com.lpnu.projectmanagementsystem.services.impl;
 
 import com.lpnu.projectmanagementsystem.services.EmailService;
+import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
@@ -15,7 +16,7 @@ public class EmailServiceImpl implements EmailService {
     private JavaMailSender javaMailSender;
 
     @Override
-    public void sendEmailWithToken(String userEmail, String link) throws Exception {
+    public void sendEmailWithToken(String userEmail, String link) throws MessagingException {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage, "utf-8");
 
