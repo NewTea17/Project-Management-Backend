@@ -86,7 +86,7 @@ public class ProjectController {
 
     @GetMapping("{id}/chat")
     public ResponseEntity<ChatEntity> getChatByProjectId(
-            @RequestParam(required = false) Long id
+            @PathVariable(required = false) Long id
     ) throws Exception {
         ChatEntity chat = projectService.getChatByProjectId(id);
         return new ResponseEntity<>(chat, HttpStatus.OK);
