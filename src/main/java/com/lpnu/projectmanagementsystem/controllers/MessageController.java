@@ -35,7 +35,7 @@ public class MessageController {
     }
 
     @GetMapping("chat/{projectId}")
-    public ResponseEntity<List<MessageEntity>> getMessageByChatId(@PathVariable Long projectId) throws Exception {
+    public ResponseEntity<List<MessageEntity>> getMessagesByProjectId(@PathVariable Long projectId) throws Exception {
         return new ResponseEntity<>(messageService.getMessagesByProjectId(projectId), HttpStatus.OK);
     }
 }
