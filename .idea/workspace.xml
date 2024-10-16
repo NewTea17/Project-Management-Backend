@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/MessageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/controllers/MessageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/controllers/MessageController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,16 +67,5 @@
       <updated>1727022691875</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/EmailServiceImpl.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
