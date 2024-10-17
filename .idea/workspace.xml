@@ -6,6 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/ChatEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/ChatEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/InvitationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/InvitationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/ProjectEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/ProjectEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/config/SecurityConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/config/SecurityConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/entities/InvitationEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/entities/InvitationEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +60,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Fullstack/projectmanagementsystem",
+    "last_opened_file_path": "D:/TrenningJava/projectmanagementsystem",
     "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
@@ -67,5 +80,13 @@
       <updated>1727022691875</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="invitation" />
+        <watch expression="project.getChat()" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

@@ -36,6 +36,7 @@ public class MessageController {
 
     @GetMapping("chat/{projectId}")
     public ResponseEntity<List<MessageEntity>> getMessagesByProjectId(@PathVariable Long projectId) throws Exception {
+        System.out.println("Number of messages: " + messageService.getMessagesByProjectId(projectId).size());
         return new ResponseEntity<>(messageService.getMessagesByProjectId(projectId), HttpStatus.OK);
     }
 }

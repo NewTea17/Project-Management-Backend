@@ -49,7 +49,8 @@ public class SecurityConfig {
                 config.setAllowedOrigins(Arrays.asList(
                         "http://localhost:3000/",
                         "http://localhost:5173/",
-                        "http://localhost:4200/"
+                        "http://localhost:4200/",
+                        "http://192.168.16.1:5173/"
                 ));
 
                 config.setAllowedMethods(Collections.singletonList("*"));

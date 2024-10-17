@@ -1,5 +1,6 @@
 package com.lpnu.projectmanagementsystem.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -30,7 +31,7 @@ public class ProjectEntity {
 
     private List<String> tags = new ArrayList<>();
 
-    @JsonIgnore
+    @JsonBackReference
     @OneToOne(mappedBy = "project", cascade = CascadeType.ALL, orphanRemoval = true)
     private ChatEntity chat;
 

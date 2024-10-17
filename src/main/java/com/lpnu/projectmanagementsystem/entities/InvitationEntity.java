@@ -15,6 +15,7 @@ public class InvitationEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "token")
     private String token;
     private String email;
     private Long projectId;
