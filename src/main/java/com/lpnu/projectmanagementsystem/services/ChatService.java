@@ -4,4 +4,6 @@ import com.lpnu.projectmanagementsystem.entities.ChatEntity;
 
 public interface ChatService {
     ChatEntity createChat(ChatEntity chat);
+
+    void deleteChat(Long id);
 }

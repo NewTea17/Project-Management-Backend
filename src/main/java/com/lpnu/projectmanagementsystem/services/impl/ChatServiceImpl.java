@@ -15,4 +15,9 @@ public class ChatServiceImpl implements ChatService {
     public ChatEntity createChat(ChatEntity chat) {
         return chatRepository.save(chat);
     }
+
+    @Override
+    public void deleteChat(Long id) {
+        chatRepository.deleteById(id);
+    }
 }

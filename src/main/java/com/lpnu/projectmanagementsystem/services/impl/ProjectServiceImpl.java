@@ -73,8 +73,18 @@ public class ProjectServiceImpl implements ProjectService {
 
     @Override
     public void deleteProject(Long id, Long userId) throws Exception {
-        getProjectById(id);
-        // userService.findUserById(userId);
+        ProjectEntity project = getProjectById(id);
+
+        UserEntity user = userService.findUserById(userId);
+        if (!project.getOwner().getId().equals(userId)) {
+            throw new Exception("User is not the owner of the project");
+        }
+
+        ChatEntity chat = project.getChat();
+        if (chat != null) {
+            chatService.deleteChat(chat.getId());
+        }
+
         projectRepository.deleteById(id);
     }
 
