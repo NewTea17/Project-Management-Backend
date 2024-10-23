@@ -95,6 +95,7 @@ public class ProjectServiceImpl implements ProjectService {
         ProjectEntity project = getProjectById(id);
         project.setName(updatedProject.getName());
         project.setDescription(updatedProject.getDescription());
+        project.setCategory(updatedProject.getCategory());
         project.setTags(updatedProject.getTags());
 
         return projectRepository.save(project);
