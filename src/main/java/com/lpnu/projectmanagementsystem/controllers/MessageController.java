@@ -27,16 +27,27 @@ public class MessageController {
     private ProjectService projectService;
 
     @PostMapping("send")
-    public ResponseEntity<MessageEntity> sendMessage(@RequestBody MessageRequest request) throws Exception {
-        MessageEntity sentMessage = messageService.sendMessage(request.getSenderId(),
-                request.getProjectId(), request.getContent());
+    public ResponseEntity<MessageEntity> sendMessage(@RequestBody MessageRequest request) {
+        try {
+            MessageEntity sentMessage = messageService.sendMessage(request.getSenderId(),
+                    request.getProjectId(), request.getContent());
 
-        return new ResponseEntity<>(sentMessage, HttpStatus.CREATED);
+            return new ResponseEntity<>(sentMessage, HttpStatus.CREATED);
+        } catch (Exception e) {
+            MessageEntity errMsg = new MessageEntity();
+            errMsg.setContent(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errMsg);
+        }
     }
 
     @GetMapping("chat/{projectId}")
-    public ResponseEntity<List<MessageEntity>> getMessagesByProjectId(@PathVariable Long projectId) throws Exception {
-        System.out.println("Number of messages: " + messageService.getMessagesByProjectId(projectId).size());
-        return new ResponseEntity<>(messageService.getMessagesByProjectId(projectId), HttpStatus.OK);
+    public ResponseEntity<List<MessageEntity>> getMessagesByProjectId(@PathVariable Long projectId) {
+        try {
+            return new ResponseEntity<>(messageService.getMessagesByProjectId(projectId), HttpStatus.OK);
+        } catch (Exception e) {
+            MessageEntity errMsg = new MessageEntity();
+            errMsg.setContent(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(List.of(errMsg));
+        }
     }
 }

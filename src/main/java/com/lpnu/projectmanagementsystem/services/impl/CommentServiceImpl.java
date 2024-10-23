@@ -3,6 +3,8 @@ package com.lpnu.projectmanagementsystem.services.impl;
 import com.lpnu.projectmanagementsystem.entities.CommentEntity;
 import com.lpnu.projectmanagementsystem.entities.TaskEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
+import com.lpnu.projectmanagementsystem.exceptions.NotFoundException;
+import com.lpnu.projectmanagementsystem.exceptions.PermissionException;
 import com.lpnu.projectmanagementsystem.repositories.CommentRepository;
 import com.lpnu.projectmanagementsystem.services.CommentService;
 import com.lpnu.projectmanagementsystem.services.TaskService;
@@ -31,11 +33,11 @@ public class CommentServiceImpl implements CommentService {
         UserEntity user = userService.findUserById(userId);
 
         if (user == null) {
-            throw new Exception("User not found");
+            throw new NotFoundException("User not found");
         }
 
         if (task == null) {
-            throw new Exception("Task not found");
+            throw new NotFoundException("Task not found");
         }
 
         CommentEntity createdComment = new CommentEntity();
@@ -57,17 +59,17 @@ public class CommentServiceImpl implements CommentService {
         UserEntity user = userService.findUserById(userId);
 
         if (user == null) {
-            throw new Exception("User not found");
+            throw new NotFoundException("User not found");
         }
 
         if (comment.isEmpty()) {
-            throw new Exception("Comment not found");
+            throw new NotFoundException("Comment not found");
         }
 
         if (comment.get().getUser().equals(user)) {
             commentRepository.delete(comment.get());
         } else {
-            throw new Exception("User doesn't have permission to delete this comment!");
+            throw new PermissionException("User doesn't have permission to delete this comment!");
         }
     }
 

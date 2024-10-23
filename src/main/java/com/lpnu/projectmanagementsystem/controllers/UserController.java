@@ -17,8 +17,13 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("profile")
-    public ResponseEntity<UserEntity> getUserProfile(@RequestHeader("Authorization") String jwt) throws Exception {
-        UserEntity user = userService.findUserProfileByJwt(jwt);
-        return new ResponseEntity<>(user, HttpStatus.OK);
+    public ResponseEntity<UserEntity> getUserProfile(@RequestHeader("Authorization") String jwt) {
+        try {
+            UserEntity user = userService.findUserProfileByJwt(jwt);
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).header("error", e.getMessage())
+                    .body(null);
+        }
     }
 }

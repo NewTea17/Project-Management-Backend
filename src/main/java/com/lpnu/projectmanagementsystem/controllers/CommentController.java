@@ -32,15 +32,19 @@ public class CommentController {
 
     @DeleteMapping("{id}")
     public ResponseEntity<MessageResponse> deleteComment(@PathVariable Long id,
-                                                         @RequestHeader("Authorization") String jwt) throws Exception {
-        UserEntity user = userService.findUserProfileByJwt(jwt);
-        commentService.deleteComment(id, user.getId());
-        return new ResponseEntity<>(new MessageResponse("Comment successfully deleted"), HttpStatus.OK);
+                                                         @RequestHeader("Authorization") String jwt) {
+        try {
+            UserEntity user = userService.findUserProfileByJwt(jwt);
+            commentService.deleteComment(id, user.getId());
+            return new ResponseEntity<>(new MessageResponse("Comment successfully deleted"), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping("{id}")
     public ResponseEntity<List<CommentEntity>> getCommentsByTaskId(@PathVariable Long id,
-                                                                   @RequestHeader("Authorization") String jwt) throws Exception {
+                                                                   @RequestHeader("Authorization") String jwt) {
         List<CommentEntity> comments = commentService.getCommentsByTaskId(id);
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }

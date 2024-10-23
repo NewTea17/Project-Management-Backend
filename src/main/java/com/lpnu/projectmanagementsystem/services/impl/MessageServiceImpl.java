@@ -3,6 +3,7 @@ package com.lpnu.projectmanagementsystem.services.impl;
 import com.lpnu.projectmanagementsystem.entities.ChatEntity;
 import com.lpnu.projectmanagementsystem.entities.MessageEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
+import com.lpnu.projectmanagementsystem.exceptions.NotFoundException;
 import com.lpnu.projectmanagementsystem.repositories.MessageRepository;
 import com.lpnu.projectmanagementsystem.services.MessageService;
 import com.lpnu.projectmanagementsystem.services.ProjectService;
@@ -28,7 +29,7 @@ public class MessageServiceImpl implements MessageService {
     public MessageEntity sendMessage(Long userId, Long projectId, String content) throws Exception {
         UserEntity sender = userService.findUserById(userId);
         if (sender == null) {
-            throw new Exception("User not found");
+            throw new NotFoundException("User not found");
         }
 
         ChatEntity chat = projectService.getChatByProjectId(projectId);

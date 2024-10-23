@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="86bd25bc-690a-4c45-af31-89367d8ef274" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/exceptions/GlobalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/exceptions/InvitationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/exceptions/NotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/exceptions/PermissionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/exceptions/UsernameAlreadyExistException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/ChatEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/entities/ChatEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/ChatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/ChatService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ChatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ChatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/controllers/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/MessageServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/ProjectServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lpnu/projectmanagementsystem/services/impl/InvitationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/TaskServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/TaskServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lpnu/projectmanagementsystem/services/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +57,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/TrenningJava/projectmanagementsystem&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ProjectManagementSystemApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "exceptions__impl",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/TrenningJava/projectmanagementsystem",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.lpnu.projectmanagementsystem.repositories" />

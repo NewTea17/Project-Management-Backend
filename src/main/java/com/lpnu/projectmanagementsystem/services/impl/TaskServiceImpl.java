@@ -3,6 +3,7 @@ package com.lpnu.projectmanagementsystem.services.impl;
 import com.lpnu.projectmanagementsystem.entities.ProjectEntity;
 import com.lpnu.projectmanagementsystem.entities.TaskEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
+import com.lpnu.projectmanagementsystem.exceptions.NotFoundException;
 import com.lpnu.projectmanagementsystem.repositories.TaskRepository;
 import com.lpnu.projectmanagementsystem.requests.TaskRequest;
 import com.lpnu.projectmanagementsystem.services.ProjectService;
@@ -32,7 +33,7 @@ public class TaskServiceImpl implements TaskService {
             return task.get();
         }
 
-        throw new Exception("Task not found");
+        throw new NotFoundException("Task not found");
     }
 
     @Override

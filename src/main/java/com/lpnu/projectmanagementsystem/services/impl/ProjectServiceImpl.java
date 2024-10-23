@@ -3,6 +3,8 @@ package com.lpnu.projectmanagementsystem.services.impl;
 import com.lpnu.projectmanagementsystem.entities.ChatEntity;
 import com.lpnu.projectmanagementsystem.entities.ProjectEntity;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
+import com.lpnu.projectmanagementsystem.exceptions.NotFoundException;
+import com.lpnu.projectmanagementsystem.exceptions.PermissionException;
 import com.lpnu.projectmanagementsystem.repositories.ProjectRepository;
 import com.lpnu.projectmanagementsystem.services.ChatService;
 import com.lpnu.projectmanagementsystem.services.ProjectService;
@@ -65,7 +67,7 @@ public class ProjectServiceImpl implements ProjectService {
     public ProjectEntity getProjectById(Long id) throws Exception {
         Optional<ProjectEntity> optionalProject = projectRepository.findById(id);
         if (optionalProject.isEmpty()) {
-            throw new Exception("Project not found");
+            throw new NotFoundException("Project not found");
         }
 
         return optionalProject.get();
@@ -77,7 +79,7 @@ public class ProjectServiceImpl implements ProjectService {
 
         UserEntity user = userService.findUserById(userId);
         if (!project.getOwner().getId().equals(userId)) {
-            throw new Exception("User is not the owner of the project");
+            throw new PermissionException("User is not the owner of the project");
         }
 
         ChatEntity chat = project.getChat();

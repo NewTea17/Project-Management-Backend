@@ -1,6 +1,7 @@
 package com.lpnu.projectmanagementsystem.services.impl;
 
 import com.lpnu.projectmanagementsystem.entities.InvitationEntity;
+import com.lpnu.projectmanagementsystem.exceptions.InvitationException;
 import com.lpnu.projectmanagementsystem.repositories.InvitationRepository;
 import com.lpnu.projectmanagementsystem.services.EmailService;
 import com.lpnu.projectmanagementsystem.services.InvitationService;
@@ -37,7 +38,7 @@ public class InvitationServiceImpl implements InvitationService {
     public InvitationEntity acceptInvitation(String token, Long userId) throws Exception {
         InvitationEntity invitation = invitationRepository.findByToken(token);
         if (invitation == null) {
-            throw new Exception("Invalid invitation link");
+            throw new InvitationException("Invalid invitation link");
         }
 
         return invitation;

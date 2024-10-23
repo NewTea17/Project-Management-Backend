@@ -2,6 +2,8 @@ package com.lpnu.projectmanagementsystem.services.impl;
 
 import com.lpnu.projectmanagementsystem.config.JwtProvider;
 import com.lpnu.projectmanagementsystem.entities.UserEntity;
+import com.lpnu.projectmanagementsystem.exceptions.NotFoundException;
+import com.lpnu.projectmanagementsystem.exceptions.UsernameAlreadyExistException;
 import com.lpnu.projectmanagementsystem.repositories.UserRepository;
 import com.lpnu.projectmanagementsystem.requests.LoginRequest;
 import com.lpnu.projectmanagementsystem.responses.AuthResponse;
@@ -33,7 +35,7 @@ public class UserServiceImpl implements UserService {
     public AuthResponse createUser(UserEntity user) throws Exception {
         UserEntity candidate = userRepository.findByEmail(user.getEmail());
         if (candidate != null) {
-            throw new Exception(String.format("Email '%s' already exists", user.getEmail()));
+            throw new UsernameAlreadyExistException(String.format("Email '%s' already exists", user.getEmail()));
         }
 
         UserEntity createdUser = new UserEntity();
@@ -74,7 +76,7 @@ public class UserServiceImpl implements UserService {
     public UserEntity findUserByEmail(String email) throws Exception {
         UserEntity user = userRepository.findByEmail(email);
         if (user == null) {
-            throw new Exception("User not found");
+            throw new NotFoundException("User not found");
         }
 
         return user;
@@ -84,7 +86,7 @@ public class UserServiceImpl implements UserService {
     public UserEntity findUserById(Long id) throws Exception {
         Optional<UserEntity> optionalUser = userRepository.findById(id);
         if (optionalUser.isEmpty()) {
-            throw new Exception("User not found");
+            throw new NotFoundException("User not found");
         }
 
         return optionalUser.get();
