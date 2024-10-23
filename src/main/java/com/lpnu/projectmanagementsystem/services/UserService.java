@@ -11,6 +11,4 @@ public interface UserService {
     UserEntity findUserProfileByJwt(String jwt) throws Exception;
     UserEntity findUserByEmail(String email) throws Exception;
     UserEntity findUserById(Long id) throws Exception;
-
-    UserEntity updateUserCountOfProjects(UserEntity user, int num);
 }

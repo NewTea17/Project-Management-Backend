@@ -92,12 +92,6 @@ public class UserServiceImpl implements UserService {
         return optionalUser.get();
     }
 
-    @Override
-    public UserEntity updateUserCountOfProjects(UserEntity user, int num) {
-        user.setCountOfProjects(user.getCountOfProjects() + num);
-        return userRepository.save(user);
-    }
-
     private Authentication authenticate(String username, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         if (userDetails == null) {

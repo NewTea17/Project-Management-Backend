@@ -135,6 +135,16 @@ public class ProjectController {
         }
     }
 
+    @DeleteMapping("remove")
+    public ResponseEntity<MessageResponse> deleteFromProject(@RequestParam Long userId, @RequestParam Long projectId) {
+        try {
+            projectService.deleteUserFromProject(projectId, userId);
+            return new ResponseEntity<>(new MessageResponse("User deleted from project successfully"), HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new MessageResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+        }
+    }
+
     @GetMapping("accept_invitation")
     public ResponseEntity<InvitationEntity> acceptInviteToProject(
             @RequestParam(required = false) String token,
